@@ -4,4 +4,4 @@ Static project website for [MiVLA](https://arxiv.org/abs/2512.15411). The page u
 
 This directory is a deployment copy of `/home/user/桌面/personal_web/MiVLA/MiVLA_WEB`. The original project files were not edited. The deployment copy updates the code links to the current `zhenhanyin/MiVLA` repository.
 
-Publication is pending GitHub account access and the final choice of site owner. An exact `https://mivla.github.io/` address requires a GitHub user or organization named `mivla`; a repository under `zhenhanyin` receives a project URL under `https://zhenhanyin.github.io/`.
+The website is published from the `main` branch of [mivla-research/mivla-research.github.io](https://github.com/mivla-research/mivla-research.github.io) at [mivla-research.github.io](https://mivla-research.github.io/).
