@@ -3,95 +3,224 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101b2c">
-  <meta name="description" content="MiVLA learns robot manipulation from human videos and simulated demonstrations through human-robot mutual imitation pre-training.">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="MiVLA: a vision-language-action model pretrained through human-robot mutual imitation on human videos and simulated robot demonstrations.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="MiVLA — Human-Robot Mutual Imitation">
-  <meta property="og:description" content="A vision-language-action model trained to bridge human and robot behavior.">
+  <meta property="og:title" content="MiVLA — Human-Robot Mutual Imitation Pre-training">
+  <meta property="og:description" content="A generalizable vision-language-action model that learns from human and simulated robot behavior.">
   <meta property="og:url" content="https://mivla-research.github.io/">
   <meta property="og:image" content="https://mivla-research.github.io/images/mivla_demo_poster.jpg">
-  <title>MiVLA | Human-Robot Mutual Imitation</title>
+  <title>MiVLA | Human-Robot Mutual Imitation Pre-training</title>
   <link rel="canonical" href="https://mivla-research.github.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=b28eed0">
+  <link rel="stylesheet" href="style.css?v=20261104">
   <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <nav class="nav shell" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="MiVLA, back to top">M<span>i</span>VLA<span class="brand-dot">.</span></a>
-      <div class="nav-links"><a href="#overview">Overview</a><a href="#approach">Approach</a><a href="#results">Results</a><a href="#demo">Demo</a></div>
-      <a class="nav-paper" href="https://arxiv.org/pdf/2512.15411" target="_blank" rel="noopener noreferrer">Read paper <span aria-hidden="true">↗</span></a>
+    <nav class="shell nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="MiVLA, back to top">Mi<span>VLA</span></a>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#resources">Resources</a>
+      </div>
+      <a class="nav-cta" href="https://modelscope.cn/models/Yinzhenhan/MiVLA" target="_blank" rel="noopener noreferrer">Model weights <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-grid" aria-hidden="true"></div><div class="hero-glow hero-glow-one" aria-hidden="true"></div><div class="hero-glow hero-glow-two" aria-hidden="true"></div>
-      <div class="shell hero-layout">
-        <div class="hero-copy">
-          <p class="eyebrow hero-eyebrow"><span class="signal-dot"></span> ROBOT LEARNING / RESEARCH PROJECT</p>
-          <h1 id="hero-title"><span class="hero-name">MiVLA</span><span class="hero-headline">Human and robot experience, learned together.</span></h1>
-          <p class="hero-deck">A vision-language-action model that uses <strong>mutual imitation</strong> to connect human videos with simulated robot demonstrations.</p>
-          <p class="paper-title">Towards Generalizable Vision-Language-Action Model with Human-Robot Mutual Imitation Pre-training</p>
-          <p class="venue-badge">CVPR 2026</p>
-          <div class="hero-actions"><a class="button button-primary" href="https://arxiv.org/pdf/2512.15411" target="_blank" rel="noopener noreferrer">Read paper PDF <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="https://github.com/zhenhanyin/MiVLA" target="_blank" rel="noopener noreferrer">Code on GitHub <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="#demo">Watch the demo <span aria-hidden="true">↘</span></a></div>
-          <p class="authors">Zhenhan Yin · Xuanhan Wang · Jiahao Jiang · Kaiyuan Deng · Pengqi Chen · Shuangle Li · Chong Liu · Xing Xu · Jingkuan Song · Lianli Gao · Heng Tao Shen</p>
-          <p class="affiliations">Tongji University <span aria-hidden="true">·</span> University of Electronic Science and Technology of China</p>
+      <div class="shell hero-inner">
+        <p class="hero-venue">CVPR 2026 <span aria-hidden="true">·</span> PROJECT PAGE</p>
+        <h1 id="hero-title">MiVLA: Towards Generalizable Vision-Language-Action Model with <span>Human-Robot Mutual Imitation Pre-training</span></h1>
+        <p class="hero-summary">Learning transferable robot behavior from human videos and simulated robot demonstrations.</p>
+        <p class="hero-authors">Zhenhan Yin · Xuanhan Wang · Jiahao Jiang · Kaiyuan Deng · Pengqi Chen · Shuangle Li · Chong Liu · Xing Xu · Jingkuan Song · Lianli Gao · Heng Tao Shen</p>
+        <p class="hero-affiliations">Tongji University <span aria-hidden="true">·</span> University of Electronic Science and Technology of China</p>
+        <div class="hero-actions" aria-label="Project links">
+          <a class="pill pill-primary" href="https://arxiv.org/pdf/2512.15411" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▣</span> Paper PDF</a>
+          <a class="pill" href="https://arxiv.org/abs/2512.15411" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span> arXiv</a>
+          <a class="pill" href="https://github.com/zhenhanyin/MiVLA" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⌘</span> Code</a>
+          <a class="pill" href="https://modelscope.cn/models/Yinzhenhan/MiVLA" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬡</span> ModelScope</a>
+          <a class="pill" href="#video"><span aria-hidden="true">▶</span> Video</a>
         </div>
       </div>
-      <div class="shell hero-facts" aria-label="Research highlights"><div><strong>02</strong><span>complementary data sources</span></div><div><strong>03</strong><span>real robot embodiments</span></div><div><strong>50</strong><span>RoboTwin-2.0 tasks evaluated</span></div><p>Pre-training draws on human and simulated robot data. Real-world evaluation includes task-specific fine-tuning.</p></div>
     </section>
 
-    <section class="section overview" id="overview" aria-labelledby="overview-title"><div class="shell">
-      <div class="overview-lead">
-        <div class="overview-copy"><p class="eyebrow"><span class="section-index">01</span> / WHY IT MATTERS</p><h2 id="overview-title">Robot data is scarce.<br><em>Behavior is not.</em></h2><p>Real robot demonstrations are expensive to collect at scale. Simulation offers broad manipulation experience, while human videos capture everyday behavior in real scenes. MiVLA learns from both while bridging their different appearances and action spaces.</p></div>
-        <figure class="overview-figure"><div class="overview-figure-top"><span>FIGURE 01 / THE DATA GAP</span><span>FROM THE PAPER</span><span class="mobile-swipe-hint">SWIPE ↔</span></div><div class="overview-figure-scroll"><img src="images/mivla_data_gap.png" alt="The paper's data pyramid shows scarce real-world robot data above more abundant simulated robot data and human videos, alongside simulation-to-reality and human-to-robot action gaps." width="1600" height="845" loading="lazy"></div><figcaption>Two scalable sources of behavior, each with a different gap to bridge.</figcaption></figure>
+    <section class="section video-section" id="video" aria-labelledby="video-title">
+      <div class="shell content-shell">
+        <div class="section-heading">
+          <span class="section-number">01 / OVERVIEW</span>
+          <h2 id="video-title">MiVLA in motion</h2>
+          <p>From mutual imitation pre-training to simulated and physical robot manipulation.</p>
+        </div>
+        <div class="video-frame">
+          <video controls preload="metadata" playsinline poster="images/mivla_demo_poster.jpg" aria-label="MiVLA project demonstration video">
+            <source src="videos/mivla_demo.mp4" type="video/mp4">
+            Your browser does not support video. <a href="videos/mivla_demo.mp4">Open the demo file</a>.
+          </video>
+        </div>
+        <p class="media-caption">PROJECT VIDEO · <a href="videos/mivla_demo.mp4" target="_blank" rel="noopener noreferrer">Open video in a new tab ↗</a></p>
       </div>
-      <div class="source-grid">
-        <article class="source-card"><span class="source-number">01 /</span><div class="source-icon human-icon" aria-hidden="true">✳</div><h3>Human videos</h3><p>Real-world scenes and natural task behavior, with a substantial gap between hands and robot arms.</p><span class="source-tag">Real-world behavior</span></article>
-        <article class="source-card"><span class="source-number">02 /</span><div class="source-icon sim-icon" aria-hidden="true">◈</div><h3>Robot simulation</h3><p>Scalable robot action trajectories and diverse manipulations, with a gap between simulation and reality.</p><span class="source-tag">Robot control priors</span></article>
-        <article class="source-card source-card-accent"><span class="source-number">03 /</span><div class="source-icon bridge-icon" aria-hidden="true">↔</div><h3>Mutual imitation</h3><p>Convert actions in both directions so each demonstration can supervise behavior across embodiments.</p><span class="source-tag">MiVLA's bridge</span></article>
+    </section>
+
+    <section class="section" id="abstract" aria-labelledby="abstract-title">
+      <div class="shell content-shell">
+        <div class="section-heading">
+          <span class="section-number">02 / ABSTRACT</span>
+          <h2 id="abstract-title">Two scalable sources. One action model.</h2>
+        </div>
+        <div class="abstract-copy">
+          <p>Vision-language-action models are typically pretrained on robot demonstrations, but real-world robot data is costly and difficult to collect at scale. Simulated robot trajectories offer varied manipulation skills, while human videos capture everyday actions in real scenes. Each source has a transfer gap: simulation differs from reality, and human hands differ from robot arms.</p>
+          <p>MiVLA bridges the action spaces with bidirectional human–robot conversion. For each demonstration, the model learns both the observed embodiment’s action and a converted action for the other embodiment. This mutual imitation objective brings human and simulated robot behavior into one policy, which is then adapted to downstream robot tasks.</p>
+        </div>
+        <div class="takeaway"><span>THE CENTRAL IDEA</span><strong>Every demonstration teaches two behaviors: what happened, and how the other embodiment could do it.</strong></div>
       </div>
-    </div></section>
+    </section>
 
-    <section class="section approach" id="approach" aria-labelledby="approach-title"><div class="shell">
-      <div class="section-intro intro-split"><div><p class="eyebrow"><span class="section-index">02</span> / THE APPROACH</p><h2 id="approach-title">One observation.<br><em>Two action targets.</em></h2></div><p>MiVLA converts a demonstrated action into a complementary action for another embodiment. A shared policy then learns the original trajectory and the converted trajectory together.</p></div>
-      <div class="method-flow" aria-label="Human-robot mutual imitation workflow"><div class="flow-node"><span class="flow-kicker">INPUT A</span><strong>Human demonstration</strong><span>Video · instruction · hand action</span></div><div class="flow-arrow" aria-hidden="true">↔</div><div class="flow-node flow-center"><span class="flow-kicker">GEOMETRIC BRIDGE</span><strong>Action conversion</strong><span>Coordinate alignment · IK · hand priors</span></div><div class="flow-arrow" aria-hidden="true">↔</div><div class="flow-node"><span class="flow-kicker">INPUT B</span><strong>Robot demonstration</strong><span>Simulation · instruction · robot action</span></div></div>
-      <figure class="architecture-figure"><div class="figure-heading"><span>FIGURE 02 / MODEL OVERVIEW</span><span>From the paper</span></div><img src="images/mivla_architecture.png" alt="MiVLA architecture: human and robot observations are encoded, conditioned into a diffusion transformer, and decoded into human joints, robot joints, and end-effector poses." width="1328" height="602" loading="lazy"><figcaption>Image and language encoders condition a diffusion Transformer. The output represents human joints, robot joints, and a shared end-effector pose.</figcaption></figure>
-      <div class="mechanism-grid"><article><span class="mechanism-line" aria-hidden="true"></span><span class="mechanism-number">01</span><h3>Human → robot</h3><p>Map relative human hand motion to a robot end-effector target, then solve for robot joint positions with inverse kinematics.</p></article><article><span class="mechanism-line" aria-hidden="true"></span><span class="mechanism-number">02</span><h3>Robot → human</h3><p>Use the robot end-effector as a hand reference and estimate the remaining finger positions from anatomical priors.</p></article><article><span class="mechanism-line" aria-hidden="true"></span><span class="mechanism-number">03</span><h3>Learn both directions</h3><p>Train on the demonstrated action and its converted counterpart for both human and simulated robot observations.</p></article></div>
-    </div></section>
-
-    <section class="section results" id="results" aria-labelledby="results-title"><div class="shell">
-      <div class="section-intro intro-split"><div><p class="eyebrow"><span class="section-index">03</span> / EVALUATION</p><h2 id="results-title">Performance across<br><em>simulation and reality.</em></h2></div><p>The paper evaluates MiVLA on RoboTwin-2.0 and three real robot tasks. The figures below use the reported success rates, with each comparison's scope stated explicitly.</p></div>
-      <div class="results-panels">
-        <article class="result-panel simulation-panel">
-          <div class="panel-heading"><div><span class="panel-kicker">RoboTwin-2.0 / 20 selected tasks</span><h3>Simulation success rate</h3></div><span class="panel-unit">SR (%)</span></div>
-          <div class="simulation-score"><strong>69<span>%</span></strong><p>MiVLA mean success · Easy mode<br><small>Hard mode: 66% · Table 1</small></p></div>
-          <div class="bar-chart" role="img" aria-label="Easy success rates: ACT 9, pi zero 23, pi zero point five 35, H-RDT 36, MiVLA 69 percent. Hard success rates: ACT 8, pi zero 25, pi zero point five 53, H-RDT 43, MiVLA 66 percent.">
-            <div class="bar-group"><p>Easy mode</p><div class="bar-row"><span>ACT</span><div class="bar-track"><i style="--bar:9%"></i></div><b>9%</b></div><div class="bar-row"><span>π0</span><div class="bar-track"><i style="--bar:23%"></i></div><b>23%</b></div><div class="bar-row"><span>π0.5</span><div class="bar-track"><i style="--bar:35%"></i></div><b>35%</b></div><div class="bar-row"><span>H-RDT</span><div class="bar-track"><i style="--bar:36%"></i></div><b>36%</b></div><div class="bar-row bar-primary"><span>MiVLA</span><div class="bar-track"><i style="--bar:69%"></i></div><b>69%</b></div></div>
-            <div class="bar-group"><p>Hard mode</p><div class="bar-row"><span>ACT</span><div class="bar-track"><i style="--bar:8%"></i></div><b>8%</b></div><div class="bar-row"><span>π0</span><div class="bar-track"><i style="--bar:25%"></i></div><b>25%</b></div><div class="bar-row"><span>π0.5</span><div class="bar-track"><i style="--bar:53%"></i></div><b>53%</b></div><div class="bar-row"><span>H-RDT</span><div class="bar-track"><i style="--bar:43%"></i></div><b>43%</b></div><div class="bar-row bar-primary"><span>MiVLA</span><div class="bar-track"><i style="--bar:66%"></i></div><b>66%</b></div></div>
-          </div><p class="panel-note">Mean over the 20 tasks in Table 1. On all 50 tasks, MiVLA reports 62.0% easy and 63.6% hard success (Table A1).</p>
-        </article>
-        <article class="result-panel real-panel"><div class="panel-heading"><div><span class="panel-kicker">THREE ROBOT EMBODIMENTS</span><h3>Real-robot success rate</h3></div><span class="panel-unit">SR (%)</span></div><div class="real-score"><strong>55<span>%</span></strong><p>MiVLA mean full-task success<br><small>π0.5: 54% · Table 2</small></p></div><div class="robot-table-wrap"><table class="robot-table"><thead><tr><th scope="col">Task / robot</th><th scope="col">π0.5</th><th scope="col">MiVLA</th></tr></thead><tbody><tr><th scope="row">Bottle onto pad <small>PiPER</small></th><td>66%</td><td>54%</td></tr><tr><th scope="row">Umbrella rack <small>ARX-5</small></th><td>75%</td><td>60%</td></tr><tr><th scope="row">Gather objects <small>LocoMan</small></th><td>20%</td><td>50%</td></tr></tbody></table></div><p class="panel-note">Each real task uses 30 robot demonstrations for task-specific fine-tuning. MiVLA leads on LocoMan; π0.5 leads on the two single-arm tasks.</p></article>
+    <section class="section section-alt" id="method" aria-labelledby="method-title">
+      <div class="shell content-shell">
+        <div class="section-heading">
+          <span class="section-number">03 / METHOD</span>
+          <h2 id="method-title">Human and robot actions, aligned in both directions.</h2>
+          <p>MiVLA combines a geometric action bridge with a shared diffusion-based action policy.</p>
+        </div>
+        <figure class="paper-figure">
+          <img src="images/mivla_architecture.png" alt="MiVLA architecture showing human-to-robot and robot-to-human action conversion, multimodal observation encoders, and a diffusion transformer." width="1328" height="602" loading="lazy">
+          <figcaption><span>FIGURE 01</span> Model overview adapted from the paper. Human and robot observations supervise both original and converted action trajectories.</figcaption>
+        </figure>
+        <div class="method-grid">
+          <article class="method-step"><span class="step-index">01</span><h3>Human → robot</h3><p>Align relative human hand motion to a robot end-effector target, then use inverse kinematics to recover robot joint actions.</p></article>
+          <article class="method-step"><span class="step-index">02</span><h3>Robot → human</h3><p>Use the robot end-effector as a hand reference and estimate finger positions from anatomical priors.</p></article>
+          <article class="method-step"><span class="step-index">03</span><h3>Mutual imitation</h3><p>Train on the demonstrated action and the converted cross-embodiment action for both kinds of observation.</p></article>
+        </div>
+        <div class="method-detail">
+          <div><span class="mini-label">POLICY INPUT</span><p>Image, language instruction, and proprioceptive state.</p></div>
+          <div><span class="mini-label">ACTION REPRESENTATION</span><p>Human joints, robot joints, and end-effector pose.</p></div>
+          <div><span class="mini-label">ACTION DECODER</span><p>A diffusion transformer trained for continuous action prediction.</p></div>
+        </div>
       </div>
-      <div class="ablation-strip"><div><span class="ablation-kicker">THE ROLE OF MUTUAL IMITATION</span><h3>Two-way training is the strongest setting in the reported ablation.</h3></div><div class="ablation-values"><span><b>37%</b> from scratch</span><i aria-hidden="true">→</i><span><b>43%</b> human-only pre-training</span><i aria-hidden="true">→</i><span><b>46%</b> one direction</span><i aria-hidden="true">→</i><span class="ablation-final"><b>66%</b> both directions</span></div><p>RoboTwin-2.0 success rate from Table 3.</p></div>
-    </div></section>
+    </section>
 
-    <section class="section gallery" aria-labelledby="gallery-title"><div class="shell"><div class="section-intro intro-split"><div><p class="eyebrow"><span class="section-index">04</span> / IN ACTION</p><h2 id="gallery-title">A closer look at<br><em>real robot behavior.</em></h2></div><p>Qualitative examples from the paper compare grasping, placing, and arrangement across baselines and robot platforms.</p></div><figure class="gallery-figure"><div class="figure-heading"><span>QUALITATIVE COMPARISON / FIGURE A5</span><a href="images/model_real_compare.png" target="_blank" rel="noopener noreferrer">Open full image ↗</a></div><div class="gallery-image-scroll"><img src="images/model_real_compare.png" alt="Qualitative comparison of ACT, pi zero, pi zero point five, H-RDT, and MiVLA on PiPER, ARX, and LocoMan manipulation examples." width="1332" height="1413" loading="lazy"></div><figcaption>Selected outcomes shown in the paper. These examples illustrate behavior; aggregate success rates are reported above.</figcaption></figure></div></section>
+    <section class="section" id="data" aria-labelledby="data-title">
+      <div class="shell content-shell">
+        <div class="section-heading">
+          <span class="section-number">04 / TRAINING RECIPE</span>
+          <h2 id="data-title">What each data source contributes</h2>
+        </div>
+        <div class="data-layout">
+          <div class="data-copy">
+            <div class="data-item"><span class="data-marker">A</span><div><h3>Simulated robot demonstrations</h3><p>Provide robot action trajectories and manipulation diversity, with a simulation-to-reality gap.</p></div></div>
+            <div class="data-item"><span class="data-marker">B</span><div><h3>Human videos</h3><p>Provide real-scene behavior and task variety, with a hand-to-robot embodiment gap.</p></div></div>
+            <div class="data-item"><span class="data-marker">↔</span><div><h3>One shared pre-training objective</h3><p>Both data types supervise original-action prediction and cross-embodiment imitation.</p></div></div>
+            <p class="data-note">The paper’s “without real robot data” claim refers to pre-training. The real-robot experiments use 30 robot demonstrations per task for task-specific fine-tuning.</p>
+          </div>
+          <figure class="paper-figure data-figure"><img src="images/mivla_data_gap.png" alt="Paper illustration comparing the scarcity of real robot data with simulated robot data and human videos." width="1600" height="845" loading="lazy"><figcaption><span>FIGURE 02</span> Motivation and complementary data sources from the paper.</figcaption></figure>
+        </div>
+      </div>
+    </section>
 
-    <section class="section demo" id="demo" aria-labelledby="demo-title"><div class="shell demo-layout"><div class="demo-copy"><p class="eyebrow"><span class="section-index">05</span> / VIDEO DEMONSTRATION</p><h2 id="demo-title">See MiVLA<br><em>in motion.</em></h2><p>Watch the project demonstration across human–robot transfer, simulated training, and physical manipulation.</p><a href="videos/mivla_demo.mp4" target="_blank" rel="noopener noreferrer">Open video file <span aria-hidden="true">↗</span></a></div><div class="video-frame"><video controls preload="metadata" playsinline poster="images/mivla_demo_poster.jpg" aria-label="MiVLA project demonstration video"><source src="videos/mivla_demo.mp4" type="video/mp4">Your browser does not support the video element. <a href="videos/mivla_demo.mp4">Download the demonstration video.</a></video><span class="video-caption">PROJECT VIDEO · MiVLA</span></div></div></section>
+    <section class="section section-alt" id="results" aria-labelledby="results-title">
+      <div class="shell content-shell">
+        <div class="section-heading">
+          <span class="section-number">05 / EVALUATION</span>
+          <h2 id="results-title">Performance in simulation and on real robots</h2>
+          <p>Success rates are shown with their task scope and source table.</p>
+        </div>
+        <div class="result-grid">
+          <article class="result-card">
+            <div class="result-card-top"><span>ROBOTWIN-2.0 · 20 SELECTED TASKS</span><span>TABLE 1</span></div>
+            <h3>Simulation success rate</h3>
+            <div class="score-pair"><div><strong>69<span>%</span></strong><small>MiVLA · Easy</small></div><div><strong>66<span>%</span></strong><small>MiVLA · Hard</small></div></div>
+            <div class="compare-list simulation-compare" aria-label="Simulation baseline success rates">
+              <div class="compare-header"><span>Method</span><span>Easy</span><span>Hard</span></div>
+              <div><span>ACT</span><b>9%</b><b>8%</b></div>
+              <div><span>π₀</span><b>23%</b><b>25%</b></div>
+              <div><span>π₀.₅</span><b>35%</b><b>53%</b></div>
+              <div><span>H-RDT</span><b>36%</b><b>43%</b></div>
+              <div class="compare-primary"><span>MiVLA</span><b>69%</b><b>66%</b></div>
+            </div>
+            <p class="result-foot">Mean over the 20 selected tasks in Table 1. Across all 50 tasks in Table A1, MiVLA reports 62.0% Easy and 63.6% Hard.</p>
+          </article>
+          <article class="result-card">
+            <div class="result-card-top"><span>3 ROBOT EMBODIMENTS</span><span>TABLE 2</span></div>
+            <h3>Real-robot full-task success</h3>
+            <div class="score-pair"><div><strong>55<span>%</span></strong><small>MiVLA · Mean</small></div><div><strong>54<span>%</span></strong><small>π₀.₅ · Mean</small></div></div>
+            <div class="compare-list real-compare" aria-label="Real-robot mean full-task success rates">
+              <div class="compare-header"><span>Method</span><span>Mean SR</span></div>
+              <div><span>ACT</span><b>0%</b></div>
+              <div><span>π₀</span><b>43%</b></div>
+              <div><span>π₀.₅</span><b>54%</b></div>
+              <div><span>H-RDT</span><b>27%</b></div>
+              <div class="compare-primary"><span>MiVLA</span><b>55%</b></div>
+            </div>
+            <p class="result-foot">Full-task success rate (SR) averaged over three tasks. MiVLA leads on LocoMan; π₀.₅ leads on the two single-arm tasks.</p>
+          </article>
+        </div>
+        <div class="task-results">
+          <div class="task-results-heading"><div><span class="mini-label">REAL-ROBOT BREAKDOWN · TABLE 2</span><h3>Full-task success by robot and method</h3></div><span>SR (%)</span></div>
+          <div class="task-table-scroll">
+            <table class="task-table">
+              <thead><tr><th scope="col">Task / robot</th><th scope="col">ACT</th><th scope="col">π₀</th><th scope="col">π₀.₅</th><th scope="col">H-RDT</th><th scope="col">MiVLA</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Bottle onto pad <small>PiPER</small></th><td>0%</td><td>20%</td><td>66%</td><td>36%</td><td>54%</td></tr>
+                <tr><th scope="row">Tidy umbrella rack <small>ARX-5</small></th><td>0%</td><td>60%</td><td>75%</td><td>45%</td><td>60%</td></tr>
+                <tr><th scope="row">Gather objects <small>LocoMan</small></th><td>0%</td><td>50%</td><td>20%</td><td>0%</td><td>50%</td></tr>
+                <tr class="task-average"><th scope="row">Mean · 3 tasks</th><td>0%</td><td>43%</td><td>54%</td><td>27%</td><td>55%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Each real task uses 30 robot demonstrations for task-specific fine-tuning. Values are full-task success rates from Table 2.</p>
+        </div>
+        <figure class="paper-figure qualitative-figure"><img src="images/model_real_compare.png" alt="Qualitative real robot outcomes on PiPER, ARX-5, and LocoMan compared across methods." width="1332" height="1413" loading="lazy"><figcaption><span>FIGURE 03</span> Selected real-robot outcomes from Figure A5. These examples complement the aggregate success rates above.</figcaption></figure>
+      </div>
+    </section>
 
-    <section class="section citation" id="citation" aria-labelledby="citation-title"><div class="shell citation-layout"><div><p class="eyebrow"><span class="section-index">06</span> / REFERENCE</p><h2 id="citation-title">Cite this work.</h2><p>MiVLA appeared at CVPR 2026. The BibTeX below cites the publicly available preprint.</p><div class="citation-links"><a class="text-link" href="https://arxiv.org/pdf/2512.15411" target="_blank" rel="noopener noreferrer">Read paper PDF ↗</a><a class="text-link" href="https://cvpr.thecvf.com/virtual/2026/poster/40664" target="_blank" rel="noopener noreferrer">CVPR 2026 listing ↗</a></div></div><div class="citation-card"><div class="citation-top"><span>BIBTEX · PREPRINT</span><button type="button" id="copy-citation" aria-label="Copy BibTeX citation">Copy citation</button></div><pre id="bibtex"><code>@article{yin2025mivla,
+    <section class="section" id="analysis" aria-labelledby="analysis-title">
+      <div class="shell content-shell">
+        <div class="section-heading"><span class="section-number">06 / ANALYSIS</span><h2 id="analysis-title">Where mutual imitation makes the difference</h2><p>The paper tests the training recipe through ablations, few-shot adaptation, and changes in the test environment.</p></div>
+        <div class="analysis-block">
+          <div><span class="mini-label">PRE-TRAINING ABLATION · TABLE 3</span><h3>Both directions work best together.</h3><p>RoboTwin-2.0 success rate rises as the cross-embodiment objectives are added.</p></div>
+          <div class="ablation-steps" aria-label="From scratch 37 percent, human-only 43 percent, human-to-robot 46 percent, both directions 66 percent">
+            <div><strong>37%</strong><span>From scratch</span></div><div><strong>43%</strong><span>Human-only pre-training</span></div><div><strong>46%</strong><span>Human → robot</span></div><div class="ablation-best"><strong>66%</strong><span>Both directions</span></div>
+          </div>
+        </div>
+        <div class="analysis-grid">
+          <article class="analysis-card"><span class="mini-label">FEW-SHOT ADAPTATION · TABLE 4</span><h3>Small task-specific datasets</h3><p>With 30 bottle-task demonstrations, the bidirectional setting reaches <strong>56%</strong> success, compared with <strong>0%</strong> from scratch. The benefit varies with task and demonstration count.</p></article>
+          <article class="analysis-card"><span class="mini-label">GENERALIZATION · TABLE 5</span><h3>Changed locations, objects, scenes</h3><p>In the reported full-data setting, MiVLA reaches <strong>75%</strong> on seen cases, <strong>50%</strong> on unseen locations, <strong>30%</strong> on unseen objects, and <strong>38%</strong> on unseen scenes.</p></article>
+        </div>
+        <div class="limitations"><span class="mini-label">LIMITATIONS REPORTED BY THE AUTHORS</span><p>Novel object shapes, unusual or cluttered initial poses, and highly distracting backgrounds can still cause failures. In some challenging out-of-distribution cases, the paper observes stronger semantic generalization from π₀.₅.</p></div>
+      </div>
+    </section>
+
+    <section class="section section-alt resources-section" id="resources" aria-labelledby="resources-title">
+      <div class="shell content-shell">
+        <div class="section-heading"><span class="section-number">07 / RESOURCES</span><h2 id="resources-title">Explore MiVLA</h2><p>Paper, implementation, released pre-trained model, and project demonstration.</p></div>
+        <div class="resource-grid">
+          <a href="https://arxiv.org/pdf/2512.15411" target="_blank" rel="noopener noreferrer"><span>01 / PAPER</span><strong>Read the paper</strong><small>Methods, experiments, and appendix</small><i aria-hidden="true">↗</i></a>
+          <a href="https://github.com/zhenhanyin/MiVLA" target="_blank" rel="noopener noreferrer"><span>02 / CODE</span><strong>Explore the repository</strong><small>MiVLA implementation</small><i aria-hidden="true">↗</i></a>
+          <a href="https://modelscope.cn/models/Yinzhenhan/MiVLA" target="_blank" rel="noopener noreferrer"><span>03 / MODEL</span><strong>Pre-trained weights</strong><small>MiVLA on ModelScope</small><i aria-hidden="true">↗</i></a>
+          <a href="#video"><span>04 / VIDEO</span><strong>Watch the demo</strong><small>Project overview and robot tasks</small><i aria-hidden="true">↗</i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="citation" aria-labelledby="citation-title">
+      <div class="shell content-shell">
+        <div class="section-heading"><span class="section-number">08 / CITATION</span><h2 id="citation-title">Cite this work</h2><p>MiVLA appeared at CVPR 2026. The BibTeX below cites the public preprint.</p></div>
+        <div class="citation-card"><div class="citation-bar"><span>BIBTEX · PREPRINT</span><button type="button" id="copy-citation" aria-label="Copy BibTeX citation">Copy citation</button></div><pre id="bibtex"><code>@article{yin2025mivla,
   title={MiVLA: Towards Generalizable Vision-Language-Action Model with Human-Robot Mutual Imitation Pre-training},
   author={Yin, Zhenhan and Wang, Xuanhan and Jiang, Jiahao and Deng, Kaiyuan and Chen, Pengqi and Li, Shuangle and Liu, Chong and Xu, Xing and Song, Jingkuan and Gao, Lianli and Shen, Heng Tao},
   journal={arXiv preprint arXiv:2512.15411},
   year={2025}
-}</code></pre><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></div></div></section>
+}</code></pre><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer"><div class="shell footer-layout"><div><a class="brand" href="#top">M<span>i</span>VLA<span class="brand-dot">.</span></a><p>Human-robot mutual imitation for generalizable action.</p></div><div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://arxiv.org/pdf/2512.15411" target="_blank" rel="noopener noreferrer">Paper PDF ↗</a><a href="https://github.com/zhenhanyin/MiVLA" target="_blank" rel="noopener noreferrer">Code ↗</a><a href="#demo">Demo ↗</a></div></div></footer>
+  <footer class="site-footer"><div class="shell footer-inner"><span>Mi<span>VLA</span></span><p>Human–robot mutual imitation for generalizable action.</p><a href="#top">Back to top ↑</a></div></footer>
 </body>
 </html>

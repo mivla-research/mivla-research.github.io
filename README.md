@@ -5,3 +5,9 @@ Static project website for [MiVLA](https://arxiv.org/abs/2512.15411). The page u
 This directory is a deployment copy of `/home/user/桌面/personal_web/MiVLA/MiVLA_WEB`. The original project files were not edited. The deployment copy updates the code links to the current `zhenhanyin/MiVLA` repository.
 
 The website is published from the `main` branch of [mivla-research/mivla-research.github.io](https://github.com/mivla-research/mivla-research.github.io) at [mivla-research.github.io](https://mivla-research.github.io/).
+
+## Project page structure
+
+Open `index.html` locally to review the site. The page follows an academic project-page reading flow: centered paper header and resource links, overview video, abstract, method, training recipe, evaluation, ablations and generalization, resources, and citation.
+
+The ModelScope pre-trained model is linked in the header, hero, and resources section. Evaluation lists every Table 1 baseline and the full-task success rates for every method and real-robot task in Table 2.
